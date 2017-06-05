@@ -68,6 +68,19 @@ SP_STEP=1
 
 **Note：**生成完成之后，别忘了把你的最小的限定符里面的 dimen 资源拷贝一份到最原始的 `values/` 目录下的 dimens.xml ，因为如果某个机型比你设置的最小的限定符的宽度还要小（比如小于上述的 320dp），则会因为在默认的 dimens.xml 里找不到该资源而抛出异常并crash掉。
 
+**自动替换 dimens 资源脚本：**好了，现在你可以使用生成的 dimens 资源进行适配了。如果你的项目里面存在大量的 dp 使用，需要替换成你生成的 dimens 资源，如果一个个去改，那实在太麻烦了。本项目提供了自动替换脚本 [replace.sh](https://github.com/paulyung541/EasyScreen/blob/master/shell/replace.sh)，把此文件拷贝到主module目录下，像刚刚那样，打开此文件，进行配置：
+```shell
+#dp属性名
+DIMEN_ATTRIBUTE_NAME="xdp"
+#sp属性名
+SP_ATTRIBUTE_NAME="xsp"
+```
+然后运行之：
+```xml
+./replace.sh
+```
+坐等几分钟，你的项目里面所有用 dp 的地方将会替换为 `@dimen/你设置的属性名_数值`
+
 ### python方式
 暂没加入，等待后续更新...
 
@@ -91,5 +104,5 @@ SP_STEP=1
 ## 注意
 建议用自己正在测试的手机的最小宽度作为基准，因为从设计师那里拿到设计图后，它是以一定分辨率进行设计的（一般 720 * 1280），这样你使用生成的数值就刚好等于你通过设计稿计算出来的数值。比如例子中的 `<dimen name="xdp_100.0">100.0dp</dimen>`
 
-### 设计稿到 dp 的转换如下图
+**设计稿到 dp 的转换如下图**
 ![设计稿到dp的转换](https://github.com/paulyung541/EasyScreen/raw/master/img/screen.png)
