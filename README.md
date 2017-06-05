@@ -1,6 +1,7 @@
 # EasyScreen
 简单的屏幕适配方法。使用脚本生成最小宽度限定符的 **dimen.xml** 文件，如 **values-sw320dp** 这样的资源目录。
 
+![Android多屏幕](https://github.com/paulyung541/EasyScreen/raw/master/img/android.png)
 ## 说明
 我们知道，Android碎片化十分严重，各种屏幕分辨率充斥市场。为了让用户有一致性的体验，对Android手机进行适配势在必行。适配方法也有许多种，以下进行简单的说明。
 
@@ -43,7 +44,7 @@ SP_NUM=40
 #sp步进
 SP_STEP=1
 ```
-这个 `DIMEN_VALUE` 是个数组，里面装了需要生成的 value-swXXXdp 目录及其 dimens.xml 的依据，第一个值作为基准，后面依次放需要生成的目录。按照上述代码的配置将会生成 **values-sw320dp**，**values-sw360dp**，**values-sw411dp** 这三个目录，生成的形式如下（values-sw360dp/dimens.xml里的）
+这个 `DIMEN_VALUE` 是个数组，里面装了需要生成的 value-swXXXdp 目录及其 dimens.xml 的依据，第一个值作为 **基准**，后面依次放需要生成的目录。**最好是以你目前进行开发的手机作为基准，** 按照上述代码的配置将会生成 **values-sw320dp**，**values-sw360dp**，**values-sw411dp** 这三个目录，生成的形式如下（values-sw360dp/dimens.xml里的）
 ```xml
 <!-- dp -->
 <dimen name="xdp_0">0dp</dimen>
@@ -79,10 +80,16 @@ SP_STEP=1
 ![1号](https://github.com/paulyung541/EasyScreen/raw/master/img/s.jpg)
 ![2号](https://github.com/paulyung541/EasyScreen/raw/master/img/l.jpg)
 
-可以看到，1号只显示了3.5个item，而2号显示了4.5个item
+可以看到，1号只显示了4.5个item，而2号显示了5.5个item
 
 现在将刚刚的 100dp 替换为我们生成的 dimen 资源 `@dimen/xdp_100.0`，测试如下图：</br>
 ![1号](https://github.com/paulyung541/EasyScreen/raw/master/img/s-e.jpg)
 ![2号](https://github.com/paulyung541/EasyScreen/raw/master/img/l-e.jpg)
 
 可以看到，显示的item数几乎是一模一样的了，其中图片的宽高，字体的大小没有替换，这里只测试item的高度，如果其它写死的长度也替换了，那么两部手机的体验将会一模一样。
+
+## 注意
+建议用自己正在测试的手机的最小宽度作为基准，因为从设计师那里拿到设计图后，它是以一定分辨率进行设计的（一般 720 * 1280），这样你使用生成的数值就刚好等于你通过设计稿计算出来的数值。比如例子中的 `<dimen name="xdp_100.0">100.0dp</dimen>`
+
+### 设计稿到 dp 的转换如下图
+![设计稿到dp的转换](https://github.com/paulyung541/EasyScreen/raw/master/img/screen.png)
