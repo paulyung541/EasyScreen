@@ -76,13 +76,13 @@ SP_STEP=1
 * 手机2号，5.2英寸，1080 * 1920 分辨率，最小宽度 411dp
 
 现在用一个 ListView 作为测试，它的每个 Item 高度为 100dp，测试如下图：</br>
-![1号](http://github.com/paulyung541/EasyScreen/raw/master/img/s.png)
-![2号](http://github.com/paulyung541/EasyScreen/raw/master/img/l.png)
+![1号](https://github.com/paulyung541/EasyScreen/raw/master/img/s.jpg)
+![2号](https://github.com/paulyung541/EasyScreen/raw/master/img/l.jpg)
 
 可以看到，1号只显示了3.5个item，而2号显示了4.5个item
 
 现在将刚刚的 100dp 替换为我们生成的 dimen 资源 `@dimen/xdp_100.0`，测试如下图：</br>
-![1号](http://github.com/paulyung541/EasyScreen/raw/master/img/s-e.png)
-![2号](http://github.com/paulyung541/EasyScreen/raw/master/img/l-e.png)
+![1号](https://github.com/paulyung541/EasyScreen/raw/master/img/s-e.jpg)
+![2号](https://github.com/paulyung541/EasyScreen/raw/master/img/l-e.jpg)
 
 可以看到，显示的item数几乎是一模一样的了，其中图片的宽高，字体的大小没有替换，这里只测试item的高度，如果其它写死的长度也替换了，那么两部手机的体验将会一模一样。
