@@ -26,7 +26,7 @@
 
 ## 使用方法
 ### shell方式
-将 `shell` 目录下的 `auto_res_tool.sh` 拷贝到项目的主 module 目录下（比如app目录），用文本编辑器，比如 NotePad++ 打开这个文件。我们需要修改一下配置来生成我们想要的 dimens.xml 文件。
+将 `shell` 目录下的 [auto_res_tool.sh](https://github.com/paulyung541/EasyScreen/blob/master/shell/auto_res_tool.sh) 拷贝到项目的主 module 目录下（比如app目录），用文本编辑器，比如 NotePad++ 打开这个文件。我们需要修改一下配置来生成我们想要的 dimens.xml 文件。
 ```shell
 DIMEN_VALUE=("360" "320" "411")
 
@@ -104,5 +104,5 @@ SP_ATTRIBUTE_NAME="xsp"
 ## 注意
 建议用自己正在测试的手机的最小宽度作为基准，因为从设计师那里拿到设计图后，它是以一定分辨率进行设计的（一般 720 * 1280），这样你使用生成的数值就刚好等于你通过设计稿计算出来的数值。比如例子中的 `<dimen name="xdp_100.0">100.0dp</dimen>`
 
-**设计稿到 dp 的转换如下图**
+**设计稿到 dp 的转换如下图所示：**</br>
 ![设计稿到dp的转换](https://github.com/paulyung541/EasyScreen/raw/master/img/screen.png)
