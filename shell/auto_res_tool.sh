@@ -106,6 +106,7 @@ do
 	then
 		name="0"$name
 	fi
+	echo "create <dimen name=\"${DIMEN_ATTRIBUTE_NAME}_${name}\">${name}dp</dimen>"
 	echo -e "	<dimen name=\"${DIMEN_ATTRIBUTE_NAME}_${name}\">${name}dp</dimen>" >> dimens.xml
 done
 echo "create dp in values-sw360dp end"
@@ -121,6 +122,7 @@ do
 	then
 		name="0"$name
 	fi
+	echo "<dimen name=\"${SP_ATTRIBUTE_NAME}_${name}\">${name}sp</dimen>"
 	echo -e "	<dimen name=\"${SP_ATTRIBUTE_NAME}_${name}\">${name}sp</dimen>" >> dimens.xml
 done
 echo "create sp in values-sw360dp end"
@@ -164,6 +166,7 @@ do
 		then
 			res="0"$res
 		fi
+		echo "<dimen name=\"${DIMEN_ATTRIBUTE_NAME}_${name}\">${res}dp</dimen>"
 		echo -e "	<dimen name=\"${DIMEN_ATTRIBUTE_NAME}_${name}\">${res}dp</dimen>" >> dimens.xml
 	done
 	echo "create dp in values-sw${DIMEN_VALUE[$index]}dp end"
@@ -185,6 +188,7 @@ do
 		then
 			res="0"$res
 		fi
+		echo "<dimen name=\"${SP_ATTRIBUTE_NAME}_${name}\">${res}sp</dimen>"
 		echo -e "	<dimen name=\"${SP_ATTRIBUTE_NAME}_${name}\">${res}sp</dimen>" >> dimens.xml
 	done
 	echo "create sp in values-sw${DIMEN_VALUE[$index]}dp end"
